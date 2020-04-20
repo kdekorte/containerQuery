@@ -1,0 +1,106 @@
+.grey-background {
+    background-color: #dedede;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 14px;
+    font-color: #1a1a1a;
+}
+
+div {
+    box-sizing: border-box;
+    padding-top: 1rem;
+}
+
+.mobile {
+    font-size: 12px;
+    background-color: #efefef;
+}
+
+.tablet {
+    font-size: 14px;
+    background-color: #ffffaf;
+}
+
+.desktop {
+    font-size: 16px;
+    background-color: #afffaf;
+}
+
+.huge {
+    font-size: 16px;
+    background-color: #afafaf;
+}
+
+.container {
+    width: 100%;
+}
+
+.twothird-width {
+    width: 66%;
+    margin-left: 100px;
+}
+
+.full-width {
+    padding: 0 10px;
+}
+
+.half-width .col {
+    padding: 0 10px;
+}
+
+.plus-one div {
+    padding: 0 10px;
+}
+
+.full-width .col {
+    width: 100%;
+
+}
+
+.half-width .col{
+    border: 1px solid #afafaf;
+    float: left;
+    width: 50%;   
+}
+
+.half-width #left {
+    border-right: 0;
+}
+
+.half-width .col::after {
+    content: "";
+    clear:both;
+}
+
+.plus-one .col {
+    border: 1px solid #afafaf;
+    border-right: 0;
+}
+
+.plus-one .bottom {
+    border: 1px solid #afafaf;
+}
+
+.plus-one .col,
+.plus-one .bottom {
+    
+    padding-top: 0;
+    float: left;
+    width: 33%;
+}
+
+.plus-one .col::after,
+.plus-one .bottom::after {
+    content: "";
+    clear: both;
+}
+
+
+.half-width .bottom {
+    float: left;
+    padding-top: 1rem;
+    width: 100%;
+}
+

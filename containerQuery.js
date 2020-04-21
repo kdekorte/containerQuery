@@ -17,12 +17,13 @@ var cQ = {
         return classNames.join(' ');
     },
 
-    onResize: function(event) {
-        document.querySelectorAll('[cq-styles]').forEach(el => {
+    resizeObserver: new ResizeObserver(entries => {
+        for( var entry of entries ) {
+            var el = entry.target;
             try {
                 styles = el.getAttribute('cq-styles').split(',');
                 breakpoints = el.getAttribute('cq-breakpoints').split(',');
-                width = el.offsetWidth;
+                width = entry.contentRect.width;
 
                 if (width <= parseInt(breakpoints[0])) {
                     el.className = cQ.addClass(el, styles[0]);
@@ -49,17 +50,18 @@ var cQ = {
             } catch(e) {
                 console.log(e);
             }
-        });
-    },
+        }
+    }),
 
 
     init: function() {
 
-        cQ.onResize(null);
-
-        window.addEventListener('resize', function (event) {
-            cQ.onResize(event);
+        document.querySelectorAll('[cq-styles]').forEach(el => {
+            cQ.resizeObserver.observe(el);
         });
+        
+
+        // also use MutationObserver to look for changes to the DOM to capture dynamically added elements
 
     }
 

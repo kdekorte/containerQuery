@@ -4,7 +4,7 @@
 body {
 	box-sizing: border-box;
 	font-size: 14px;
-	font-color: #1a1a1a;
+	color: #1a1a1a;
 }
 div {
 	box-sizing: border-box;
@@ -32,6 +32,11 @@ div {
 .twothird-width {
 	width: 66%;
 	margin-left: 100px;
+
+	.hidden-on-small {
+		height: 0px;
+		overflow: hidden;
+	}
 }
 .full-width {
 	padding: 0 10px;
@@ -41,6 +46,8 @@ div {
 }
 .half-width {
 	.col {
+		color: #efefef;
+		background-color: #00aa00;
 		padding: 0 10px;
 		border: 1px solid #afafaf;
 		float: left;
@@ -60,7 +67,12 @@ div {
 	}
 }
 .plus-one {
+
+	
+
 	div {
+		color: #efefef;
+		background-color: #0000ff;
 		padding: 0 10px;
 	}
 	.col {

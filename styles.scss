@@ -33,9 +33,10 @@ div {
 	width: 66%;
 	margin-left: 100px;
 
-	.hidden-on-small {
-		height: 0px;
-		overflow: hidden;
+	.small {
+		.hidden {
+			display: none;
+		}
 	}
 }
 .full-width {

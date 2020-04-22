@@ -43,16 +43,16 @@
 
             </div>
 
-            <div cq-styles='hidden-on-small, normal' cq-breakpoints='300'>
-                Quisque cursus lorem erat, vitae posuere mi posuere vitae. Nulla facilisi. Suspendisse scelerisque
-                libero elit, sit
-                amet pharetra est auctor commodo. Fusce malesuada pellentesque tortor. Nam vestibulum tempor ex. Class
-                aptent taciti
-                sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer semper est dui, nec
-                mollis est
-                malesuada vel. Proin sodales eros a velit iaculis, eu rhoncus enim bibendum. Vivamus bibendum id dolor
-                quis
-                consectetur.
+            <div cq-styles='small, normal' cq-breakpoints='300'>
+                <div class='hidden'>
+                    This text will be hidden when the container is 300px or less wide
+                </div>
+            </div>
+
+            <div cq-styles='on-small, normal' cq-breakpoints='300,600'>
+                <div class='hidden'>
+                    This text will not be updated because there is an error in the definition of the breakpoints. There should be one more style than breakpoints
+                </div>
             </div>
         </div>
 

@@ -44,9 +44,8 @@ div {
   margin-left: 100px;
 }
 
-.twothird-width .hidden-on-small {
-  height: 0px;
-  overflow: hidden;
+.twothird-width .small .hidden {
+  display: none;
 }
 
 .full-width {

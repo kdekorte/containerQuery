@@ -2,15 +2,15 @@ var cQ = {
 
     addClass: function (element, className) {
         var classNames = element.className.split(' ');
-        if (classNames.indexOf(className) == -1) {
-            classNames.push(className);
+        if (classNames.indexOf(className.trim()) == -1) {
+            classNames.push(className.trim());
         }
         return classNames.join(' ');
     },
     
     removeClass: function(element, className) {
         var classNames = element.className.split(' ');
-        var index = classNames.indexOf(className)
+        var index = classNames.indexOf(className.trim());
         if ( index != -1) {
             classNames.splice(index, 1);
         }
@@ -23,6 +23,10 @@ var cQ = {
             try {
                 styles = el.getAttribute('cq-styles').split(',');
                 breakpoints = el.getAttribute('cq-breakpoints').split(',');
+
+                if (styles.length <= breakpoints.length) {
+                    throw('There must be one more style than breakpoints on <' + el.tagName + ' cq-styles=\'' +  el.getAttribute('cq-styles') + '\' cq-breakpoints=\'' + el.getAttribute('cq-breakpoints') + '\' >');
+                }
                 width = entry.contentRect.width;
 
                 if (width <= parseInt(breakpoints[0])) {
